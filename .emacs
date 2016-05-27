@@ -39,21 +39,26 @@
 
 
 (put 'upcase-region 'disabled nil)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 
 ;;bro-mode
-(setq exec-path (append exec-path '("/opt/bro/bin/bro")))
-(setenv "PATH" (concat (getenv "PATH") "/opt/bro/bin/bro/"))
-(setenv "BROPATH" "/opt/bro/bin/bro:/opt/bro/share/broctl/scripts:/opt/bro/share/bro/policy:/opt/bro/share/bro/site")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/bro-mode/")
-(setq bro-event-bif "/opt/bro/share/bro/base/event.bif.bro")
-(setq bro-tracefiles "~/tracefiles")
-(require 'bro-mode)
-
+;; (setq exec-path (append exec-path '("/opt/bro/bin/bro")))
+;; (setenv "PATH" (concat (getenv "PATH") "/opt/bro/bin/bro/"))
+;; (setenv "BROPATH" "/opt/bro/bin/bro:/opt/bro/share/broctl/scripts:/opt/bro/share/bro/policy:/opt/bro/share/bro/site")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/bro-mode/")
+;; (setq bro-event-bif "/opt/bro/share/bro/base/event.bif.bro")
+;; (setq bro-tracefiles "~/tracefiles")
+;; (require 'bro-mode)
 
 ;; multi-cursor mode:
-(require 'multiple-cursors)
+
+(use-package jedi
+	     :ensure t)
+
+(use-package multiple-cursors
+             :ensure t)
+
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -77,9 +82,12 @@
 
 ;; helm
 ;; [Facultative] Only if you have installed async.
-(add-to-list 'load-path "/home/scottie/.emacs.d/async")
+;;(add-to-list 'load-path "/home/scottie/.emacs.d/async")
 
-(add-to-list 'load-path "/home/scottie/.emacs.d/helm")
-(require 'helm-config)
+;; (add-to-list 'load-path "/home/scottie/.emacs.d/helm")
+;;(require 'helm-config)
+(use-package helm
+             :ensure t)
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (setq org-agenda-include-diary t)
