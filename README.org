@@ -1,0 +1,3 @@
+
+- sudo ./install.py
+- ./configs.py
