@@ -29,5 +29,5 @@ else:
                 emacs_orig.write(line)
             print "Appended to ~/.emacs"
 
-print "Restarting bash"
-subprocess.call(["bash"])
+print "You should restart Bash"
+
