@@ -11,7 +11,7 @@ def cmd_exists(cmd):
 if cmd_exists('yum'):
     subprocess.call(['yum', 'update', '-y'])
     subprocess.call(['yum', 'install', 'epel-release', '-y'])
-    subprocess.call(['yum', 'install', 'emacs', 'iftop', 'htop', 'tmux', 'git', 'python-setuptools', 'build-essential', 'scrot', 'ipython', 'virtualenvwrapper' '-y'])
+    subprocess.call(['yum', 'install', 'emacs', 'iftop', 'htop', 'tmux', 'git', 'python-setuptools', 'build-essential', 'scrot', 'ipython', 'virtualenvwrapper', '-y'])
 
 elif cmd_exists('apt-get'):
     subprocess.call(['apt-get', 'update', '&&', 'apt-get', 'upgrade'])
