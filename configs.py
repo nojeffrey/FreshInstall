@@ -13,6 +13,10 @@ with open(".bashrc", "r") as new_bashrc:
             bashrc_orig.write(line)
         print "Appended to ~/.bashrc"
 
+
+subprocess.call(["cp", ".tmux.conf", "%s/.tmux.conf" % home])
+print "Copied new tmux config to ~/.tmux.conf"
+
             
 if path_exists('~/.emacs'):
     with open(".emacs", "r") as new_emacs:
