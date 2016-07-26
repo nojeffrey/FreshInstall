@@ -1,5 +1,3 @@
-export WORKON_HOME=$HOME/.virtualenvs 
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 alias ta='tmux a -t'
 alias tn='tmux new -s'
 alias notebook="ipython notebook --pylab inline"
@@ -62,4 +60,4 @@ function bytestoTB() { python -c "print str($1/1024/1024/1024/1024.00) + ' TB'";
 export HISTSIZE=5000
 HISTCONTROL=ignorespace
 
-export TERM=xterm-256color
+export TERM=screen-256color
